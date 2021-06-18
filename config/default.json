@@ -1,0 +1,4 @@
+{
+    "MONGO_URI": "mongodb+srv://KarolinaObcowska:zifaVhE4VQVbksJX@cluster0.v1ubx.mongodb.net/Gym?retryWrites=true&w=majority",
+    "jwtToken": "somesupersecretkey"
+}

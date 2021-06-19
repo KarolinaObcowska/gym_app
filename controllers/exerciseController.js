@@ -1,5 +1,5 @@
 const { validationResult } = require("express-validator");
-
+const mongoose = require('mongoose');
 const User = require('../models/user');
 const Training = require('../models/training');
 const Exercise = require('../models/exercise');
@@ -32,8 +32,9 @@ exports.createExercise = async (req, res, next) => {
                 _id: training._id, name: training.name
             },
             user: {
-                name: training.user,
-            }
+                user: training.user.name,
+            },
+            exercises: training.exercises
         });
     } catch (err) {
         if (!err.statusCode) {
@@ -45,11 +46,13 @@ exports.createExercise = async (req, res, next) => {
 
 exports.getExercises = async (req, res, next) => {
     try {
-        const exercises = await Exercise.find();
-        res.status(200).json({
-            message: 'Fetched exercises successfully',
-            exercises: exercises
-        })
+        const trainingId = [req.params.trainingId];
+        const exercises = await Training.findById(trainingId).select('-user -date -name -_id').populate({
+            path: 'exercises',
+            model: "Exercise"
+        }
+    );
+        res.status(200).json(exercises.exercises)
     } catch (err) {
         if (!err.statusCode) {
             err.statusCode = 500;
@@ -63,14 +66,11 @@ exports.getExercise = async (req, res, next) => {
         const exerciseId = req.params.exerciseId;
         const exercise = await Exercise.findById(exerciseId)
         if (!exercise) {
-            const error = new Error('Could not find exercise!');
+            const error = new Error('Could not find exercise!').select('-_id');
             error.statusCode = 404;
             throw error;
         };
-        res.status(200).json({
-            message: 'Exercise fetched!',
-            exercise: exercise
-        })
+        res.status(200).json(exercise)
     } catch (err) {
         if (!err.statusCode) {
             err.statusCode = 500;

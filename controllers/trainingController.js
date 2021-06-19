@@ -4,7 +4,13 @@ const User = require('../models/user');
 
 exports.getTrainings = async(req, res, next) => {
     try {
-        const trainings = await Training.find();
+        const trainings = await Training.find().where('user._id').in(req.user.id)
+            .sort({ date: -1 })
+            .populate({
+                path: 'exercises',
+                model: "Exercise"
+            }
+        );
         res.status(200).json({
             message: 'Fetched trainings successfully',
             pageTitle: 'Trainings',
@@ -34,7 +40,7 @@ exports.getTraining = async(req, res, next) => {
         res.status(200).json({
             message: 'Training fetched!',
             training: training,
-            exercises: training.exercises.name,
+            exercises: training.exercises,
         });
     } catch (err) {
         if (!err.statusCode) {
@@ -54,24 +60,13 @@ exports.createTraining = async(req, res, next) => {
     }
     try {
         const name = req.body.name;
-        const userId = '60b66212fa8a82fe804c9654';
+        const userId = req.user.id;
         const training = new Training({
             name: name,
             user: userId
-
         });
         await training.save();
-        const user = await User.findById(userId);
-        user.trainings.push(training);
-        await user.save();
-        res.status(200).json({
-            message: 'Training created successfully',
-            training: training,
-            user: {
-                _id: user._id,
-                name: user.name
-            }
-        });
+        res.status(200).json(training);
     } catch (err) {
         if (!err.statusCode) {
             err.statusCode = 500;
@@ -117,7 +112,7 @@ exports.updateTraining = async(req, res, next) => {
 };
 
 exports.deleteTraining = async(req, res, next) => {
-    const userId = '60b66212fa8a82fe804c9654';
+    const userId = req.user.id;
     const trainingId = req.params.trainingId;
     const training = await Training.findById(trainingId);
     if (!training) {

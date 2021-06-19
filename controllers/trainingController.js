@@ -4,18 +4,13 @@ const User = require('../models/user');
 
 exports.getTrainings = async(req, res, next) => {
     try {
-        const trainings = await Training.find().where('user._id').in(req.user.id)
+        const trainings = await Training.find({user: req.user.id})
             .sort({ date: -1 })
             .populate({
                 path: 'exercises',
                 model: "Exercise"
-            }
-        );
-        res.status(200).json({
-            message: 'Fetched trainings successfully',
-            pageTitle: 'Trainings',
-            trainings: trainings
-        })
+            });
+            res.status(200).json(trainings)
     } catch (err) {
         if (!err.statusCode) {
             err.statusCode = 500;
@@ -26,7 +21,7 @@ exports.getTrainings = async(req, res, next) => {
 
 exports.getTraining = async(req, res, next) => {
     const trainingId = req.params.trainingId;
-    const training = await Training.findById(trainingId)
+    const training = await Training.findOne({_id: trainingId, user: req.user.id})
         .populate({
             path: 'exercises',
             model: "Exercise"
@@ -37,11 +32,7 @@ exports.getTraining = async(req, res, next) => {
             error.statusCode = 404;
             throw error;
         };
-        res.status(200).json({
-            message: 'Training fetched!',
-            training: training,
-            exercises: training.exercises,
-        });
+        res.status(200).json(training);
     } catch (err) {
         if (!err.statusCode) {
             err.statusCode = 500;
@@ -83,7 +74,7 @@ exports.updateTraining = async(req, res, next) => {
         error.statusCode = 422;
         throw error;
     }
-    const userId = '60b66212fa8a82fe804c9654';
+    const userId = req.user.id;
     const name = req.body.name;
     try {
         const training = await Training.findById(trainingId);
@@ -99,10 +90,7 @@ exports.updateTraining = async(req, res, next) => {
         };
         training.name = name;
         const result = await training.save();
-        res.status(200).json({
-            message: 'Training updated!',
-            training: result
-        })
+        res.status(200).json(training)
     } catch (err) {
         if (!err.statusCode) {
             err.statusCode = 500;
@@ -130,10 +118,7 @@ exports.deleteTraining = async(req, res, next) => {
         const user = await User.findById(userId);
         user.trainings.pull(trainingId);
         await user.save();
-        res.status(200).json({
-            message: 'Delete training',
-            training: trainingId
-        })
+        res.status(200).json(trainingId)
     } catch (err) {
         if (!err.statusCode) {
             err.statusCode = 500;

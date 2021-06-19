@@ -12,10 +12,7 @@ router.get('/:trainingId', isAuth, trainingController.getTraining);
 router.put('/:trainingId', isAuth, trainingController.updateTraining);
 router.delete('/:trainingId', isAuth, trainingController.deleteTraining);
 
-router.get('/:trainingId/exercises', isAuth, exerciseController.getExercises);
 router.post('/:trainingId/exercise', isAuth, exerciseController.createExercise);
-router.get('/:trainingId/exercise/:exerciseId', isAuth, exerciseController.getExercise);
-router.put('/:trainingId/exercise/:exerciseId', isAuth, exerciseController.updateExercise);
 router.delete('/:trainingId/exercise/:exerciseId', isAuth, exerciseController.deleteExercise);
 
 module.exports = router;

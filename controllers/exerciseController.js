@@ -23,7 +23,7 @@ exports.createExercise = async (req, res, next) => {
         const training = await Training.findById(trainingId);
         training.exercises.push(exercise);
         await training.save();
-        res.status(200).json(exercise);
+        res.status(200).json(training.exercises);
     } catch (err) {
         if (!err.statusCode) {
             err.statusCode = 500;

@@ -51,12 +51,17 @@ exports.createTraining = async(req, res, next) => {
     }
     try {
         const name = req.body.name;
+        const date = req.body.date;
         const userId = req.user.id;
         const training = new Training({
             name: name,
+            date: date,
             user: userId
         });
         await training.save();
+        const user = await User.findById(userId);
+        user.trainings.push(training);
+        await user.save();
         res.status(200).json(training);
     } catch (err) {
         if (!err.statusCode) {

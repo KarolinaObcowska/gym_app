@@ -50,6 +50,12 @@ const userSchema = new Schema({
                 type: Number
             }
         }
+    ],
+    trainings: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Training'
+        }
     ]
 }, { timestamps: true });
 

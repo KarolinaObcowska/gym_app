@@ -1,0 +1,24 @@
+export const SET_ALERT = 'SET_ALERT';
+export const REMOVE_ALERT = 'REMOVE_ALERT';
+export const SIGNUP_SUCCESS = 'SIGNUP_SUCCESS';
+export const SIGNUP_FAIL = 'SIGNUP_FAIL';
+export const USER_LOADED = 'USER_LOADED';
+export const AUTH_ERROR = 'AUTH_ERROR';
+export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
+export const LOGIN_FAIL = 'LOGIN_FAIL';
+export const LOGOUT = 'LOGOUT';
+export const GET_PROFILE = 'GET_PROFILE';
+export const UPDATE_PROFILE = 'UPDATE_PROFILE';
+export const DELETE_ACCOUNT = 'DELETE_ACCOUNT';
+export const PROFILE_ERROR  = 'PROFILE_ERROR'
+export const CLEAR_PROFILE = 'CLEAR_PROFILE';
+export const CREATE_TRAINING = 'CREATE_TRAINING';
+export const GET_TRAININGS = 'GET_TRAININGS';
+export const GET_TRAINING = 'GET_TRAINING';
+export const UPDATE_TRAINING = 'UPDATE_TRAINING';
+export const DELETE_TRAINING = 'DELETE_TRAINING';
+export const TRAINING_ERROR = 'TRAINING_ERROR';
+export const ADD_EXERCISE = 'ADD_EXERCISE';
+export const DELETE_EXERCISE = 'DELETE_EXERCISE';
+export const GET_EXERCISES = 'GET_EXERCISES';
+

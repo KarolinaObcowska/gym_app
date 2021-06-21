@@ -37,20 +37,20 @@ const Bmi = () => {
     return (
         <Fragment>
             <Calculators />
-            <p className='text-primary large my-1'> BMI Calculator </p>
+            <p className='centered text-primary large my-1'> BMI Calculator </p>
+            <div className='border'></div>
             <p>BMI is a measurement of a person's leanness or corpulence based on their height and weight, and is intended to quantify tissue mass. 
                 It is widely used as a general indicator of whether a person has a healthy body weight for their height.</p>
+            <br />
             <div style={{ display: 'none'}} id='result'>
                 <p className='text-primary my-1 lead' id='bmi'></p>
             </div>
-            <form className='form'>
+            <form className='form calculators'>
                 <div className="form-group">
-                    <p className='text-primary'><strong>Weight: </strong></p>
-                        <input type="number" required placeholder="weight" name="weight" value={weight} onChange={e => onChange(e)}/>
+                        <input type="number" required placeholder="Weight (kg)" name="weight" value={weight} onChange={e => onChange(e)}/>
                 </div>
                 <div className="form-group">
-                    <p className='text-primary'><strong>Height: </strong></p>
-                        <input type="number" required placeholder="height" name="height" value={height} onChange={e => onChange(e)}/>
+                        <input type="number" required placeholder="Height (cm)" name="height" value={height} onChange={e => onChange(e)}/>
                 </div>
                 <button onClick={onClick}type="submit" className="btn btn-primary my-1">Calculate</button>
             </form>

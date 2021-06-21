@@ -24,7 +24,7 @@ const Dashboard = ({ deleteAccount, getCurrentUser, auth: { user }, user: { goal
             <Fragment>
                 <DashboardActions />
                 <UserTop user={user} />
-                <div className="profile-exp bg-white p-2">
+                <div className="bg-white p-2">
                     {
                         goalCard !== null ?
                             <Fragment>

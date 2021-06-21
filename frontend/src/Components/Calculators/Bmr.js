@@ -52,13 +52,14 @@ const Bmr = () => {
     return (
         <Fragment>
             <Calculators />
-            <p className='text-primary large my-1'> BMR Calculator </p>
+            <p className='centered text-primary large my-1'> BMR Calculator </p>
+            <div className='border'></div>
             <p>The basal metabolic rate (BMR) is the amount of energy needed while resting in a temperate environment when the digestive system is inactive. 
                 It is the equivalent of figuring out how much gas an idle car consumes while parked.</p><br />
             <div style={{ display: 'none'}} id='result'>
                 <p className='text-primary my-1 lead' id='bmr'></p>
             </div>
-            <form className='form'>
+            <form className='form calculators'>
                 <div className="form-group">
                     <select name="gender" required value={gender} onChange={e => onChange(e)}>
                         <option value="0">Select Male/Female</option>
@@ -67,15 +68,15 @@ const Bmr = () => {
                     </select>
                 </div>
                 <div className="form-group">
-                    <p className='text-primary'><strong>Weight: </strong></p>
-                        <input type="number" required placeholder="weight" name="weight" value={weight} onChange={e => onChange(e)}/>
+                    
+                        <input type="number" required placeholder="Weight (kg)" name="weight" value={weight} onChange={e => onChange(e)}/>
                 </div>
                 <div className="form-group">
-                    <p className='text-primary'><strong>Height: </strong></p>
-                        <input type="number" required placeholder="height" name="height" value={height} onChange={e => onChange(e)}/>
+                    
+                        <input type="number" required placeholder="Height (cm)" name="height" value={height} onChange={e => onChange(e)}/>
                 </div>
                 <div className="form-group">
-                    <p className='text-primary'><strong>Age: </strong></p>
+                    
                         <input type="number" required placeholder="Age" name="age" value={age} onChange={e => onChange(e)}/>
                 </div>
                 <button onClick={onClick}type="submit" className="btn btn-primary my-1">Calculate</button>

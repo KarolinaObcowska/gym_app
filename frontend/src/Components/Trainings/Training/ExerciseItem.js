@@ -5,18 +5,15 @@ import { connect } from 'react-redux'
 
 const ExerciseItem = ({ deleteExercise, trainingId, auth, exercise: { _id, name, series, reps }}) => {
     return (
-        <Fragment className='post bg-white p-1 my-1'>
+        <Fragment>
             <tr>
                 <td>{name}</td>
                 <td>{series}</td>
                 <td>{reps}</td>
-                
-                    <button className='btn btn-danger' type ='button' onClick={e => deleteExercise(trainingId, _id)}>
-                        <i className='fas fa-times'></i>
-                    </button>
-                
+                <button className='btn btn-danger delete' type ='button' onClick={e => deleteExercise(trainingId, _id)}>
+                    <i className='fas fa-times'></i>
+                </button>
             </tr>
-            
           </Fragment>
     )
 }

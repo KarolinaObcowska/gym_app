@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { Fragment, useState } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { addExercise } from '../../../actions/training';
@@ -24,54 +24,44 @@ const ExerciseForm = ({ addExercise, trainingId }) => {
     }
 
     return (
-        <div class="post-form">
-            <div class="bg-primary p">
-                <h3>Add exercise</h3>
-            </div>
-            <form class="form my-1" onSubmit={e => onSubmit(e)}>
-            <table> 
-                <thead>
-                    <tr>
-                        <td>Name</td>
-                        <td>Series</td>
-                        <td>Reps</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            <input
-                            name='name'
-                            required
-                            value={name}
-                            onChange={e => onChange(e)}
-                            >
-                            </input>
-                        </td>
-                        <td>
-                            <input
-                                name='series'
-                                required
-                                value={series}
-                                onChange={e => onChange(e)}
-                                >
-                            </input>
-                        </td>
-                        <td>
-                            <input
-                                name='reps'
-                                required
-                                value={reps}
-                                onChange={e => onChange(e)}
-                                >
-                            </input>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <input type="submit" class="btn btn-dark my-1" value="Submit" />
+        <Fragment>
+            <form class="calculators form my-1" onSubmit={e => onSubmit(e)}>
+                <div className="form-group">
+                <input
+                    name='name'
+                    required
+                    type='text'
+                    placeholder='Exercise name'
+                    value={name}
+                    onChange={e => onChange(e)}
+                    >
+                    </input>
+                </div>
+                <div className="form-group">
+                    <input
+                        name='series'
+                        required
+                        type='number'
+                        placeholder='Series'
+                        value={series}
+                        onChange={e => onChange(e)}
+                        >
+                        </input>
+                </div >           
+                <div className="form-group">
+                    <input
+                        name='reps'
+                        required
+                        type='number'
+                        placeholder='Reps'
+                        value={reps}
+                        onChange={e => onChange(e)}
+                        >
+                    </input>
+                </div>     
+                <input type="submit" class="btn btn-dark my-1" value="Submit" />
             </form>
-        </div>
+        </Fragment>
     )
 }
 

@@ -47,13 +47,14 @@ const MifflinStJeor = () => {
     return (
         <Fragment>
             <Calculators />
-            <p className='text-primary large my-1'> Mifflin-St Jeor Calculator </p>
+            <p className='centered text-primary large my-1'> Mifflin-St Jeor Calculator </p>
+            <div className='border'></div>
             <p>Mifflin St. Jeor Calculator, the formula can be located under the calculator. The Mifflin-St Jeor Equation calculates your basal metabolic rate (BMR), and its results are based on an estimated average. 
                 Basal metabolic rate is the amount of energy expended per day at rest.</p>
             <div style={{ display: 'none'}} id='result'>
                 <p className='text-primary my-1 lead' id='mifflin'></p>
             </div>
-            <form className='form'>
+            <form className='form calculators'>
                 <div className="form-group">
                     <select requirde name="rate" required value={rate} onChange={e => onChange(e)}>
                     <option value="0">Select Activity Level</option>
@@ -72,15 +73,12 @@ const MifflinStJeor = () => {
                     </select>
                 </div>
                 <div className="form-group">
-                    <p className='text-primary'><strong>Weight: </strong></p>
-                        <input type="number" required placeholder="weight" name="weight" value={weight} onChange={e => onChange(e)}/>
+                        <input type="number" required placeholder="Weight (kg)" name="weight" value={weight} onChange={e => onChange(e)}/>
                 </div>
                 <div className="form-group">
-                    <p className='text-primary'><strong>Height: </strong></p>
-                        <input type="number" required placeholder="height" name="height" value={height} onChange={e => onChange(e)}/>
+                        <input type="number" required placeholder="Height (cm)" name="height" value={height} onChange={e => onChange(e)}/>
                 </div>
                 <div className="form-group">
-                    <p className='text-primary'><strong>Age: </strong></p>
                         <input type="number" required placeholder="Age" name="age" value={age} onChange={e => onChange(e)}/>
                 </div>
                 <button onClick={onClick}type="submit" className="btn btn-primary my-1">Calculate</button>

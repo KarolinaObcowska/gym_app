@@ -29,8 +29,8 @@ const Signup = ({ setAlert, signup, isAuthenticated }) => {
     }
     return (
         <Fragment>
-            <h1 className="large text-primary">Sign Up</h1>
-            <p className="lead"><i className="fas fa-user"></i> Create Your Account</p>
+            <h1 className="centered large text-primary">Sign Up</h1>
+            <div className='border'></div>
             <form className="form" onSubmit={e => onSubmit(e)}>
                 <div className="form-group">
                     <input 
@@ -75,7 +75,7 @@ const Signup = ({ setAlert, signup, isAuthenticated }) => {
                 </div>
                 <input type="submit" className="btn btn-primary" value="Register" />
             </form>
-            <p className="my-1">
+            <p className="centered my-1">
                 Already have an account? <Link to='/login'>Sign In</Link>
             </p>
         </Fragment>

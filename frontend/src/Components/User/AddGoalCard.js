@@ -32,29 +32,25 @@ const AddGoalCard = ({ addGoalCard, history }) => {
 
     return (
         <Fragment>
-            <h1 className="large text-primary"> Add Your Goal </h1>
+            <h1 className="centered large text-primary"> Add Your Goal </h1>
+            <div className='border'></div>
             <form className="form" onSubmit={e => onSubmit(e)}>
                 <div className="form-group">
-                    <p>Actual weight: </p>
                     <input type="number" placeholder="Actual weight (kg)" name="actualWeight" required value={actualWeight} onChange={e => onChange(e)}/>
                 </div>
                 <div className="form-group">
-                    <p>Goal weight: </p>
                     <input type="number" placeholder="Goal weight (kg)" name="goalWeight" required value={goalWeight} onChange={e => onChange(e)}/>
                 </div>
                 <div className="form-group">
-                    <p>Height: </p>
                     <input type="number" placeholder="Height (cm)" name="height" value={height} onChange={e => onChange(e)}/>
                 </div>
                 <div className="form-group">
-                    <p>Kcal: </p>
                     <input type="number" placeholder="Kcal" name="kcal" required value={kcal} onChange={e => onChange(e)}/>
                 </div>
                 <div className="form-group">
-                    <p>Trainings per week: </p>
                     <input type="number" placeholder="Training per week" name="trainingRate" value={trainingRate} onChange={e => onChange(e)}/>
                 </div>
-                <input type="submit" className="btn btn-primary my-1" />
+                <input type="submit" className="btn btn-primary my-1" value='Send' />
                 <Link className="btn btn-light my-1" to="/dashboard">Go Back</Link>
             </form>
         </Fragment>

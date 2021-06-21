@@ -44,13 +44,14 @@ const Ymca = () => {
     return (
         <Fragment>
             <Calculators />
-            <p className='text-primary large my-1'> YMCA Body Fat Percentage Calculator </p>
+            <p className='centered text-primary large my-1'> YMCA Body Fat Percentage Calculator </p>
+            <div className='border'></div>
             <p>This calculator uses the formula developed by the YMCA to estimate your body fat percentage without calipers. Use a tape measure and enter your waist measurement. 
                 Combine the waist measurement with your gender and weight and this calculator will estimate your percent of body fat, how much of your weight is lean mass and how much is fat mass, and your general fitness category.</p>
             <div style={{ display: 'none'}} id='result'>
                 <p className='text-primary my-1 lead' id='ymca'></p>
             </div>
-            <form className='form'>
+            <form className='form calculators'>
             <div className="form-group">
                     <select requirde name="gender" required value={gender} onChange={e => onChange(e)}>
                         <option value="0">Select Male or Female</option>
@@ -59,12 +60,10 @@ const Ymca = () => {
                     </select>
                 </div>
                 <div className="form-group">
-                    <p className='text-primary'><strong>Waist size: (cm) </strong></p>
-                        <input type="number" required placeholder="waist" name="waist" value={waist} onChange={e => onChange(e)}/>
+                        <input type="number" required placeholder="Waist size (cm)" name="waist" value={waist} onChange={e => onChange(e)}/>
                 </div>
                 <div className="form-group">
-                    <p className='text-primary'><strong>Weight: (kg)</strong></p>
-                        <input type="number" required placeholder="weight" name="weight" value={weight} onChange={e => onChange(e)}/>
+                        <input type="number" required placeholder="Weight (kg)" name="weight" value={weight} onChange={e => onChange(e)}/>
                 </div>
                 <button onClick={onClick}type="submit" className="btn btn-primary my-1">Calculate</button>
             </form>

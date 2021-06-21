@@ -26,8 +26,8 @@ const Login = ({ login, isAuthenticated }) => {
 
     return (
         <Fragment>
-            <h1 className="large text-primary">Sign In</h1>
-            <p className="lead"><i className="fas fa-user"></i> Login into your account</p>
+            <h1 className="centered large text-primary">Sign In</h1>
+            <div className='border'></div>
             <form className="form" onSubmit={e => onSubmit(e)}>
                 <div className="form-group">
                     <input 
@@ -52,7 +52,7 @@ const Login = ({ login, isAuthenticated }) => {
                 </div>
                 <input type="submit" className="btn btn-primary" value="Login" />
             </form>
-            <p className="my-1">
+            <p className="centered my-1">
                 Don't have an account yet'? <Link to='/signup'>Sign Up</Link>
             </p>
         </Fragment>

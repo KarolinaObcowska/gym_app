@@ -47,12 +47,13 @@ const BorcBrugsh = () => {
     return (
         <Fragment>
             <Calculators />
-            <p className='text-primary large my-1'> Borc Index Calculator </p>
+            <p className='centered text-primary large my-1'> Borc Index Calculator </p>
+            <div className='border'></div>
             <p>The Broca Index formed the benchmark for other body calculations in use today but is now considered outdated and usually replaced in practice by the body mass index (BMI).</p>
             <div style={{ display: 'none'}} id='result'>
                 <p className='text-primary my-1 lead' id='borc'></p>
             </div>
-            <form className='form'>
+            <form className='form calculatorss'>
                 <div className="form-group">
                     <select requirde name="gender" required value={gender} onChange={e => onChange(e)}>
                         <option value="0">Select Male/Female</option>
@@ -61,8 +62,7 @@ const BorcBrugsh = () => {
                     </select>
                 </div>
                 <div className="form-group">
-                    <p className='text-primary'><strong>Height: </strong></p>
-                        <input type="number" required placeholder="height" name="height" value={height} onChange={e => onChange(e)}/>
+                        <input type="number" required placeholder="Height (cm)" name="height" value={height} onChange={e => onChange(e)}/>
                 </div>
                 <button onClick={onClick}type="submit" className="btn btn-primary my-1">Calculate</button>
             </form>

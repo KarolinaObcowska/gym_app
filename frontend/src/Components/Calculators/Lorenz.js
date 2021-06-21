@@ -41,11 +41,12 @@ const Lorenz = () => {
     return (
         <Fragment>
             <Calculators />
-            <p className='text-primary large my-1'> Lorenz Calculator </p>
+            <p className='centered text-primary large my-1'> Lorenz Calculator </p>
+            <div className='border'></div>
             <div style={{ display: 'none'}} id='result'>
                 <p className='text-primary my-1 lead' id='bmi'></p>
             </div>
-            <form className='form'>
+            <form className='form calculators'>
                 <div className="form-group">
                     <select requirde name="gender" required value={gender} onChange={e => onChange(e)}>
                         <option value="0">Select Male/Female</option>
@@ -54,8 +55,7 @@ const Lorenz = () => {
                     </select>
                 </div>
                 <div className="form-group">
-                    <p className='text-primary'><strong>Height: </strong></p>
-                        <input type="number" required placeholder="height" name="height" value={height} onChange={e => onChange(e)}/>
+                        <input type="number" required placeholder="Height (cm)" name="height" value={height} onChange={e => onChange(e)}/>
                 </div>
                 <button onClick={onClick}type="submit" className="btn btn-primary my-1">Calculate</button>
             </form>

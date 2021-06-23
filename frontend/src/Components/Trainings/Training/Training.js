@@ -8,7 +8,7 @@ import Spinner from '../../Layout/Spinner'
 import { getTraining } from '../../../actions/training'
 
 
-const Training = ({ getTraining, match, training: { training, loading }}) => {
+const Training = ({ getTraining, match, training: {training,  loading }}) => {
     useEffect(() => {
         getTraining(match.params.id)
     }, [getTraining, match.params.id])

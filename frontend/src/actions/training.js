@@ -135,6 +135,7 @@ export const deleteExercise = (trainingId, exerciseId) => async dispatch => {
             type: DELETE_EXERCISE,
             payload: exerciseId,
         })
+        dispatch(setAlert('Exercise removed!', 'danger'))
     } catch (err) {
         dispatch({
             type: TRAINING_ERROR,

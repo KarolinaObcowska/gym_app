@@ -5,7 +5,7 @@ import { getTrainings } from '../../actions/training'
 import TrainingItem from './TrainingItem'
 import TrainingForm from './TrainingForm'
 
-const Trainings = ({ getTrainings, training: { trainings, _id } }) => {
+const Trainings = ({ getTrainings, training: { trainings } }) => {
     useEffect(() => {
         getTrainings()
     }, [getTrainings])
@@ -14,7 +14,7 @@ const Trainings = ({ getTrainings, training: { trainings, _id } }) => {
             <h1 className="large text-primary">Trainings</h1>
         
             <TrainingForm />
-            <div className='posts'>
+            <div className='trainings'>
                     {trainings.map((training) => (
                         <TrainingItem key={training._id} training={training} />
                     ))}

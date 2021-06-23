@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 const UserGoalCard = ({ goalCard }) => {
     return (
-        <div>    
+        <div className='goalCard'>    
             <h4> 
                 <strong> Actual weight: </strong> { goalCard.actualWeight}
             </h4>

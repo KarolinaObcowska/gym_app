@@ -42,10 +42,9 @@ exports.deleteExercise= async (req, res, next) => {
         throw error;
     }
     try {
-        await Exercise.findByIdAndRemove(exerciseId);
         const training = await Training.findById(trainingId);
+        await Exercise.findByIdAndRemove(exerciseId);
         training.exercises.pull({ _id: exerciseId });
-        await training.save();
         res.status(200).json(exerciseId)
     } catch (err) {
         if (!err.statusCode) {

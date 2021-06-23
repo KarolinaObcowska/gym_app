@@ -29,7 +29,7 @@ const TrainingForm = ({ createTraining }) => {
             <div className="my-2">
                 <button onClick={() => toggTrainingInputs(!displayTrainingInputs)}type="button" className="btn btn-light">Add new training</button>
             </div>
-                <form class="form training my-1" onSubmit={e => onSubmit(e)}>
+                <form class="form my-1 centered" onSubmit={e => onSubmit(e)}>
                 {displayTrainingInputs && <Fragment>
                     <div className="form-group">
                         <input

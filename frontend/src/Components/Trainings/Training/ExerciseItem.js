@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { deleteExercise } from '../../../actions/training'
 import { connect } from 'react-redux'
 
-const ExerciseItem = ({ deleteExercise, trainingId, auth, exercise: { _id, name, series, reps }}) => {
+const ExerciseItem = ({ deleteExercise, trainingId, auth, exercise: { _id, name, series, reps }, }) => {
     return (
         <Fragment>
             <tr>
@@ -13,6 +13,7 @@ const ExerciseItem = ({ deleteExercise, trainingId, auth, exercise: { _id, name,
                 <button className='btn btn-danger delete' type ='button' onClick={e => deleteExercise(trainingId, _id)}>
                     <i className='fas fa-times'></i>
                 </button>
+                
             </tr>
           </Fragment>
     )

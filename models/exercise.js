@@ -14,10 +14,6 @@ const exerciseSchema = new Schema ({
         type: Number,
         required: true,
     },
-    training: {
-        type: Schema.Types.ObjectId,
-        ref: 'Training'
-    },
     user: {
         type: Schema.Types.ObjectId,
         ref: 'User'

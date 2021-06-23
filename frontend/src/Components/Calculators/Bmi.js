@@ -54,7 +54,8 @@ const Bmi = () => {
                 </div>
                 <button onClick={onClick}type="submit" className="btn btn-primary my-1">Calculate</button>
             </form>
-            <table className='table my-1' style={{display: 'inline'}}>
+            <div className='centered my-2'>
+                <table className='table my-1'>
                     <thead>
                         <tr>
                             <th>BMI Range</th>
@@ -96,6 +97,8 @@ const Bmi = () => {
                         </tr>
                     </tbody>
                 </table>
+            </div>
+            
         </Fragment>
     )
 }

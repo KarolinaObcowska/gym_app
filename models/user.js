@@ -48,6 +48,9 @@ const userSchema = new Schema({
             },
             trainingRate: {
                 type: Number
+            },
+            steps: {
+                type: Number
             }
         }
     ],

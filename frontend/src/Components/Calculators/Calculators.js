@@ -6,7 +6,7 @@ export const Calculators = () => {
         <div className='block'>
             <ul>
                 <li>
-                    <Link to='/calculators/bmi' className='btn btn-light my-1'>
+                    <Link to='/calculators/bmi' className='btn btn-dark my-1'>
                         <p>
                             <i className='fas fa-user-circle text-primary'></i>{' '}
                                 Kalkulator BMI
@@ -14,7 +14,7 @@ export const Calculators = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link to='/calculators/whr' className='btn btn-light my-1'>
+                    <Link to='/calculators/whr' className='btn btn-dark my-1'>
                         <p>
                             <i className='fas fa-user-circle text-primary'></i>{' '}
                                 Kalkulator WHR
@@ -22,7 +22,7 @@ export const Calculators = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link to='/calculators/broc-brugsh' className='btn btn-light my-1'>
+                    <Link to='/calculators/broc-brugsh' className='btn btn-dark my-1'>
                         <p>
                             <i className='fas fa-user-circle text-primary'></i>{' '}
                                 Kalkulator Broca - Brugsha
@@ -30,7 +30,7 @@ export const Calculators = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link to='/calculators/lorenz' className='btn btn-light my-1'>
+                    <Link to='/calculators/lorenz' className='btn btn-dark my-1'>
                         <p>
                             <i className='fas fa-user-circle text-primary'></i>{' '}
                                 Kalkulator Lorenza
@@ -38,7 +38,7 @@ export const Calculators = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link to='/calculators/ymca' className='btn btn-light my-1'>
+                    <Link to='/calculators/ymca' className='btn btn-dark my-1'>
                         <p>
                             <i className='fas fa-user-circle text-primary'></i>{' '}
                                 Kalkulator YMCA
@@ -46,7 +46,7 @@ export const Calculators = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link to='/calculators/bmr' className='btn btn-light my-1'>
+                    <Link to='/calculators/bmr' className='btn btn-dark my-1'>
                         <p>
                             <i className='fas fa-user-circle text-primary'></i>{' '}
                                 Kalkulator BMR
@@ -54,7 +54,7 @@ export const Calculators = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link to='/calculators/harris-benedict' className='btn btn-light my-1'>
+                    <Link to='/calculators/harris-benedict' className='btn btn-dark my-1'>
                         <p>
                             <i className='fas fa-user-circle text-primary'></i>{' '}
                                 Kalkulator Harrisa-Benedicta
@@ -62,7 +62,7 @@ export const Calculators = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link to='/calculators/mifflin-st-jeor' className='btn btn-light my-1'>
+                    <Link to='/calculators/mifflin-st-jeor' className='btn btn-dark my-1'>
                         <p>
                             <i className='fas fa-user-circle text-primary'></i>{' '}
                                 Kalkulator Mifflina-St Jeor
@@ -70,7 +70,8 @@ export const Calculators = () => {
                     </Link>
                 </li>
             </ul>
-        <br />
+            <br />
+            <hr />
         </div>
     )
 }

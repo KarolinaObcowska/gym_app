@@ -13,7 +13,7 @@ const Training = ({ getTraining, match, training: {training,  loading }}) => {
         getTraining(match.params.id)
     }, [getTraining, match.params.id])
     return loading || training === null ? <Spinner /> : <Fragment>
-        <Link to='/trainings' className='btn'>Back to Trainings</Link>
+        <Link to='/trainings' className='btn btn-dark'>Back to Trainings</Link>
         <TrainingItem training={training} />
         <ExerciseForm trainingId={training._id}/>
     </Fragment>

@@ -10,10 +10,11 @@ const ExerciseItem = ({ deleteExercise, trainingId, auth, exercise: { _id, name,
                 <td>{name}</td>
                 <td>{series}</td>
                 <td>{reps}</td>
-                <button className='btn btn-danger delete' type ='button' onClick={e => deleteExercise(trainingId, _id)}>
+                <td>
+                    <button className='btn btn-danger delete' type ='button' onClick={e => deleteExercise(trainingId, _id)}>
                     <i className='fas fa-times'></i>
-                </button>
-                
+                    </button>
+                </td>
             </tr>
           </Fragment>
     )

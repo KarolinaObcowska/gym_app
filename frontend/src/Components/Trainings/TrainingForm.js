@@ -6,14 +6,13 @@ import { createTraining } from '../../actions/training';
 const INITIAL_STATE = {
     name: '',
     date: '',
-    description: '',
     tags:''
 }
 const TrainingForm = ({ createTraining }) => {
 
     const [formData, setFormData] = useState(INITIAL_STATE);
     const [displayTrainingInputs, toggTrainingInputs] = useState(false);
-    const { name, date, tags, description } = formData;
+    const { name, date, tags } = formData;
 
     const onChange = e => {
         setFormData({ ...formData, [e.target.name]: e.target.value })
@@ -27,7 +26,7 @@ const TrainingForm = ({ createTraining }) => {
     return (
         <Fragment>
             <div className="my-2">
-                <button onClick={() => toggTrainingInputs(!displayTrainingInputs)}type="button" className="btn btn-light">Add new training</button>
+                <button onClick={() => toggTrainingInputs(!displayTrainingInputs)}type="button" className="btn btn-dark">Add new training</button>
             </div>
                 <form class="form my-1 centered" onSubmit={e => onSubmit(e)}>
                 {displayTrainingInputs && <Fragment>
@@ -41,7 +40,7 @@ const TrainingForm = ({ createTraining }) => {
                             onChange={e => onChange(e)}>
                         </input>
                     </div>
-                    <div className="form-group">
+                    {/* <div className="form-group">
                         <textarea
                             name="description"
                             type='text'
@@ -51,7 +50,7 @@ const TrainingForm = ({ createTraining }) => {
                             value={description}
                             onChange={e => onChange(e)}>
                         </textarea>
-                    </div>
+                    </div> */}
                     <div className="form-group">
                         <input
                             name="tags"

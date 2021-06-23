@@ -56,13 +56,14 @@ exports.updateAccount = async (req, res) => {
 }
 
 exports.addGoalCard = async (req, res) => {
-    const { actualWeight, goalWeight, height, kcal, trainingRate } = req.body;
+    const { actualWeight, goalWeight, height, kcal, trainingRate, steps } = req.body;
     const newGoalCard = {
         actualWeight, 
         goalWeight, 
         height, 
         kcal, 
-        trainingRate
+        trainingRate,
+        steps
     };
     try {
         const user = await User.findOne({ _id: req.user.id })

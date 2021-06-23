@@ -59,7 +59,7 @@ const ExerciseForm = ({ addExercise, trainingId }) => {
                         >
                     </input>
                 </div>     
-                <input type="submit" class="btn btn-dark my-1" value="Submit" />
+                <input type="submit" class=" btn btn-light my-1" value="Submit" />
             </form>
         </Fragment>
     )

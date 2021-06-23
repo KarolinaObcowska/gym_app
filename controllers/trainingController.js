@@ -53,12 +53,10 @@ exports.createTraining = async(req, res, next) => {
         const name = req.body.name;
         const date = req.body.date;
         const tags = req.body.tags;
-        const description = req.body.description;
         const userId = req.user.id;
         const training = new Training({
             name: name,
             date: date,
-            description: description,
             tags: tags,
             user: userId
         });

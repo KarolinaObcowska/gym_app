@@ -8,21 +8,21 @@ import { addExercise, deleteExercise, deleteTraining} from '../../actions/traini
 
 const TrainingItem = ({ training: { _id, name, date, exercises, description, tags }, deleteTraining }) => {
     return (
-        < div class="training-form bg-white p-1 my-1">
-            <div className='training-name m-1'>
-                <p class="lead text-primary"> {name} </p>
-            </div>
+        < div class="training-form p-1 my-1">
             <div className='training-details '>
+                <div className='training-items lead training-name m-1'>
+                    <p class="text-primary"> {name} </p>
+                </div>
                 <p class="training-items">
                 Date: {''}
                     <Moment format='DD/MM/YYYY'>{date}</Moment>
                 </p>
-                <p className='training-items'>
+                {/* <p className='training-items'>
                     Description: {''}
                     {description && (
                         description
                     )}
-                </p>
+                </p> */}
                 <p className='training-items'>
                     Tags: {''}
                     {tags && (
@@ -37,6 +37,7 @@ const TrainingItem = ({ training: { _id, name, date, exercises, description, tag
                             <th>Name</th>
                             <th>Series</th>
                             <th>Reps</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>

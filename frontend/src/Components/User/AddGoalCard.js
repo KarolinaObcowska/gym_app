@@ -11,6 +11,7 @@ const INITIAL_STATE = {
     height: '',
     kcal: '',
     trainingRate: '',
+    steps: ''
 }
 const AddGoalCard = ({ addGoalCard, history }) => {
 
@@ -18,7 +19,7 @@ const AddGoalCard = ({ addGoalCard, history }) => {
     const [formData, setFormData] = useState(INITIAL_STATE);
 
     
-    const { actualWeight, goalWeight, height, kcal, trainingRate } = formData;
+    const { actualWeight, goalWeight, height, kcal, trainingRate, steps } = formData;
 
     const onChange = e => {
         setFormData({ ...formData, [e.target.name]: e.target.value })
@@ -49,6 +50,9 @@ const AddGoalCard = ({ addGoalCard, history }) => {
                 </div>
                 <div className="form-group">
                     <input type="number" placeholder="Training per week" name="trainingRate" value={trainingRate} onChange={e => onChange(e)}/>
+                </div>
+                <div className="form-group">
+                    <input type="number" placeholder="Steps" name="steps" value={steps} onChange={e => onChange(e)}/>
                 </div>
                 <input type="submit" className="btn btn-primary my-1" value='Send' />
                 <Link className="btn btn-light my-1" to="/dashboard">Go Back</Link>

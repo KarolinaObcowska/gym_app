@@ -1,8 +1,8 @@
 /* Global Styles */
 :root {
-  --primary-color: black;
-  --dark-color: #232625;
-  --light-color: #f4f4f4;
+  --primary-color: #fd7014;
+  --dark-color: #393e46;
+  --light-color: #eeeeee;
   --danger-color: #96031a;
   --success-color: #28a745;
 }
@@ -17,9 +17,7 @@ body {
   font-family: 'Raleway', sans-serif;
   font-size: 1rem;
   line-height: 1.6;
-  background-color: #fff;
-
-  color: #4a5559;
+  background-color: var(--light-color);
 }
 video {
   position: absolute;
@@ -110,8 +108,8 @@ ul {
 
 .btn {
   display: inline-block;
-  background: var(--light-color);
-  color: #333;
+  background: var(--primary-color);
+  color: var(--light-color);
   padding: 0.4rem 1.3rem;
   font-size: 1rem;
   border: none;
@@ -127,7 +125,7 @@ ul {
   text-align: center;
   margin: 0.3rem;
   background: var(--light-color);
-  color: #333;
+  color: var(--dark-color);
 }
 
 .alert {
@@ -142,17 +140,9 @@ ul {
 .bg-primary,
 .badge-primary,
 .alert-primary {
-  background: var(--light-color);
-  color: var(--dark-color);
-  border: 1px solid var(--dark-color);
-}
-
-.btn-light,
-.bg-light,
-.badge-light,
-.alert-light {
-  background: var(--light-color);
-  color: var(--dark-color);
+  background: var(--primary-color);
+  color: var(--light-color);
+  border: none;
 }
 
 .btn-dark,
@@ -179,7 +169,6 @@ ul {
   color: #fff;
 }
 
-.btn-white,
 .bg-white,
 .badge-white,
 .alert-white {
@@ -195,7 +184,7 @@ ul {
 }
 
 .btn:hover {
-  background-color: var;
+  opacity: 0.8;
 }
 
 .block li {
@@ -249,9 +238,20 @@ ul {
   box-sizing: border-box;
   font-size: 1.2rem;
   background: white;
-  border: solid 1px black;
+  border: solid 1px var(--primary-color);
   outline: none;
   color: var(--dark-color);
+  transition: 0.5s;
+}
+
+.form input[type='text']:hover,
+.form input[type='email']:hover,
+.form input[type='password']:hover,
+.form input[type='date']:hover,
+.form input[type='number']:hover,
+.form select:hover,
+.form textarea:hover {
+  box-shadow: 0px 0px 5px 2px var(--primary-color);
 }
 
 .form input[type='submit'],
@@ -289,12 +289,14 @@ button {
   padding: 0.5rem;
   text-align: left;
   width: fit-content;
-  border: solid 0.1px var(--dark-color);
+  border-bottom: 1px solid var(--primary-color);
 }
 
 .table th {
   width: fit-content;
-  background: var(--light-color);
+  color: var(--light-color);
+  background: var(--dark-color);
+  border-bottom: 1px solid var(--primary-color);
 }
 
 /* Signup/Signin */
@@ -359,7 +361,7 @@ button {
 
 .profile-grid {
   display: grid;
-  grid-template-areas: 'top top';
+  grid-template-areas: 'top';
   grid-gap: 1rem;
 }
 
@@ -381,32 +383,36 @@ button {
   color: var(--dark-color);
 }
 
+.goalCard {
+  background-color: var(--dark-color);
+  color: var(--light-color);
+  border: solid 1px var(--primary-color);
+}
 .training-form {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  background-color: var(--light-color);
 }
 
 .training-items {
-  color: #aaa;
+  color: var(--dark-colorcolor);
+  opacity: 0.5;
   font-size: 0.8rem;
   display: inline-flex;
-  justify-content: space-between;
-  padding: 0.5rem 2rem;
 }
-
+.training-name {
+  opacity: 1;
+  margin-left: 0;
+  padding: auto;
+  font-size: 1.2rem;
+}
 .training-details {
   width: 100%;
-  padding: auto;
 }
 
-.training-name {
-  width: 100%;
-  margin-left: 2rem;
-}
 .training {
   width: 100%;
-  margin-left: 2rem;
 }
 
 /* Mobile Styles */

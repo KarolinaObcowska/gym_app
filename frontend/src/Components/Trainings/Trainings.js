@@ -11,7 +11,7 @@ const Trainings = ({ getTrainings, training: { trainings } }) => {
     }, [getTrainings])
     return (
         <Fragment>
-            <h1 className="large text-primary">Trainings</h1>
+            <h1 className="large text-primary">Your trainings</h1>
         
             <TrainingForm />
             <div className='trainings'>

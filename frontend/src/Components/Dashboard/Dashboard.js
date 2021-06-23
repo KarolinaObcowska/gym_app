@@ -15,16 +15,14 @@ const Dashboard = ({ deleteAccount, getCurrentUser, auth: { user }, user: { goal
     return (
         loading && user === null ? <Spinner /> :
         <Fragment>
-            <h1 className='large text-primary'>Dashboard</h1>
-            <p className='lead'>
-                <i className='fas fa-user'></i>{'  '}
-                Welcome { user && user.name }
-            </p>
+            <h1 className='large text-primary my-2'><i className='fas fa-user'></i>{'  '}
+                Welcome { user && user.name }</h1>
+           
             { user !== null ? 
             <Fragment>
                 <DashboardActions />
                 <UserTop user={user} />
-                <div className="bg-white p-2">
+                <div className="goalCard p-2">
                     {
                         goalCard !== null ?
                             <Fragment>

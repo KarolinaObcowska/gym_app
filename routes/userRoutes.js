@@ -12,6 +12,8 @@ router.delete('/:id', isAuth, userController.deleteAccount)
 
 router.post('/', isAuth, userController.updateAccount);
 
+router.get('/goalcard', isAuth, userController.getGoalCard)
+
 router.put('/goalcard', isAuth, userController.addGoalCard)
 
 router.delete('/goalcard/:id', isAuth, userController.deleteGoalCard)

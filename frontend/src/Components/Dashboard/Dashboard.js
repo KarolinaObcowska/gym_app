@@ -4,14 +4,14 @@ import DashboardActions from './DashboardActions';
 import { connect } from 'react-redux'; 
 import PropTypes from 'prop-types';
 import Spinner from '../Layout/Spinner'
-import { getCurrentUser, deleteAccount } from '../../actions/user';
+import { getCurrentUser, deleteAccount,  } from '../../actions/user';
 import UserGoalCard from '../User/UserGoalCard';
 import UserTop from '../User/UserTop'
 
-const Dashboard = ({ deleteAccount, getCurrentUser, auth: { user }, user: { goalCard, loading } }) => {
+const Dashboard = ({ deleteAccount,  getCurrentUser, auth: { user }, user: { goalCard, loading } }) => {
     useEffect(() => {
         getCurrentUser();
-    }, [getCurrentUser])
+    }, [getCurrentUser, ])
     return (
         loading && user === null ? <Spinner /> :
         <Fragment>

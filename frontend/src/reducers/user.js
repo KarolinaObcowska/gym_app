@@ -1,9 +1,10 @@
-import { GET_PROFILE, PROFILE_ERROR, UPDATE_PROFILE } from "../actions/types";
+import { GET_PROFILE, PROFILE_ERROR, UPDATE_PROFILE, GET_GOALCARD } from "../actions/types";
 
 const INITIAL_STATE = {
     user: {},
     loading: true,
     error: {},
+    goalCard: {}
 }
 
 export default function userReducer(state = INITIAL_STATE, action) {
@@ -15,6 +16,7 @@ export default function userReducer(state = INITIAL_STATE, action) {
                 ...state,
                 user: payload,
                 loading: false,
+                goalCard: payload.goalCard
             }
         case PROFILE_ERROR:
             return {
@@ -23,6 +25,12 @@ export default function userReducer(state = INITIAL_STATE, action) {
                 laoding: false,
                 user: null
             };
+        case GET_GOALCARD:
+            return {
+                ...state,
+                goalCard: payload,
+                loading: false
+            }
         default: 
             return state;
     }

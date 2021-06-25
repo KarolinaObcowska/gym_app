@@ -21,4 +21,5 @@ export const TRAINING_ERROR = 'TRAINING_ERROR';
 export const ADD_EXERCISE = 'ADD_EXERCISE';
 export const DELETE_EXERCISE = 'DELETE_EXERCISE';
 export const GET_EXERCISES = 'GET_EXERCISES';
+export const GET_GOALCARD = 'GET_GOALCARD';
 

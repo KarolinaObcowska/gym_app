@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { setAlert } from './alert';
-import { GET_PROFILE, PROFILE_ERROR, DELETE_ACCOUNT, UPDATE_PROFILE } from './types';
+import { GET_PROFILE, PROFILE_ERROR, DELETE_ACCOUNT, UPDATE_PROFILE, GET_GOALCARD } from './types';
 
 // get current user account
 export const getCurrentUser = () => async dispatch => {
@@ -62,6 +62,20 @@ export const deleteAccount = () => async dispatch => {
     }
 };
 
+export const getGoalCard = () => async dispatch => {
+    try {
+        const res = await axios.get('/user/goalcard');
+        dispatch({
+            type: GET_GOALCARD,
+            payload: res.data
+        })
+    } catch (err) {
+        dispatch({
+            type: PROFILE_ERROR,
+            payload: { msg: err.response.statusText, status: err.response.status }
+        })
+    }
+}
 
 export const addGoalCard = (formData, history) => async dispatch => {
     try {

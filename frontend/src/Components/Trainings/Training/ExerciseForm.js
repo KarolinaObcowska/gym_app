@@ -69,4 +69,4 @@ ExerciseForm.propTypes = {
     addExercise: PropTypes.func.isRequired,
 }
 
-export default connect(null, { addExercise })(ExerciseForm)
+export default connect(null, { addExercise, })(ExerciseForm)

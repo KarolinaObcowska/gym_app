@@ -55,6 +55,16 @@ exports.updateAccount = async (req, res) => {
     }
 }
 
+exports.getGoalCard = async (req, res) => {
+    try {
+        const user = await User.findOne({_id: req.user.id});
+        res.json(user.goalCard[0])
+    } catch (err) {
+        console.log(err.msg);
+        res.status(500).send('Server Error')
+    }
+}
+
 exports.addGoalCard = async (req, res) => {
     const { actualWeight, goalWeight, height, kcal, trainingRate, steps } = req.body;
     const newGoalCard = {

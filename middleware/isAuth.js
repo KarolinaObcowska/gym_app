@@ -14,16 +14,16 @@ module.exports = function(req, res, next) {
     let decoded;
     try {
         decoded = jwt.verify(token, config.get('jwtToken'));
+        if (!decoded) {
+            const error = new Error('Token is not valid');
+            error.statusCode = 401;
+            throw error;
+        }
+        req.user = decoded.user;
+        next();
     } catch (err) {
         err = new Error('Not authenticated');
         err.statusCode = 500;
         throw err;
-    }
-    if (!decoded) {
-        const error = new Error('Token is not valid');
-        error.statusCode = 401;
-        throw error;
     } 
-    req.user = decoded.user;
-    next();
 };

@@ -79,8 +79,12 @@ exports.login = async (req, res, next) => {
             }
         );
         res.status(200).json({token, user});
+        return;
     } catch (err) {
-        console.error(err.msg)
-        res.status(500).send('Server error')
+        if (!err.statusCode) {
+            err.statusCode = 500;
+        }
+        res.status(500).send('Server error');
+        return(err);
     }
 }
